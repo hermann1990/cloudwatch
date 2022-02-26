@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   userdata = templatefile(var.userdata ,  {
-    ssm_cloudwatch_config = aws_ssm_parameter.cw_agent.name
+    ssm_cloudwatch_config = aws_ssm_parameter.cloudwatch_agent.name
   })
 }
 
