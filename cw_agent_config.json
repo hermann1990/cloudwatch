@@ -14,5 +14,48 @@
       }
     },
     "aggregation_dimensions": [["InstanceId", "InstanceType"], ["InstanceId"]]
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "c:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log",
+            "log_group_name": "amazon-cloudwatch-agent.log",
+            "timezone": "UTC"
+          },
+          {
+            "file_path": "c:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\test.log",
+            "log_group_name": "test.log",
+            "timezone": "Local"
+          }
+        ]
+      },
+      "windows_events": {
+        "collect_list": [
+          {
+            "event_name": "System",
+            "event_levels": [
+              "INFORMATION",
+              "ERROR"
+            ],
+            "log_group_name": "System",
+            "log_stream_name": "System",
+            "event_format": "xml"
+          },
+          {
+            "event_name": "CustomizedName",
+            "event_levels": [
+              "WARNING",
+              "ERROR"
+            ],
+            "log_group_name": "CustomizedLogGroup",
+            "log_stream_name": "CustomizedLogStream",
+            "event_format": "xml"
+          }
+        ]
+      }
+    },
+    "log_stream_name": "example_log_stream_name"
   }
 }
